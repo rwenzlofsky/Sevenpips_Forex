@@ -1,5 +1,5 @@
 // Sevenpips.cpp : Definiert die Initialisierungsroutinen für die DLL.
-//
+// xx
 
 #include "stdafx.h"
 #include "FxSocket.h"
