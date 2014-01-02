@@ -1,0 +1,9 @@
+; Sevenpips.def : Deklariert die Modulparameter für die DLL.
+
+LIBRARY      "Sevenpips"
+DESCRIPTION  'Sevenpips Windows Dynamic Link Library'
+
+EXPORTS
+	Sevenpips_Test
+	Upload_MT4
+
