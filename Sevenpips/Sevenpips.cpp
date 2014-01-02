@@ -115,7 +115,7 @@ MT4_EXPFUNC char* __stdcall Upload_MT4(char *server, char *args)
 	res = socket.UrlGet(server, post);
 
 	char *ret = socket.lasterror.GetBuffer(socket.lasterror.GetLength());
-	sprintf_s(buffer, "%s->%s", server, ret);
+	sprintf_s(buffer, "%s %s", server, ret);
 	return(&buffer[0]);
 
 }
