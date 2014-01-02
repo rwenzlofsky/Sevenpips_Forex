@@ -1,5 +1,5 @@
 // Sevenpips.h : Hauptheaderdatei für die Sevenpips-DLL
-//
+// xxx
 
 #pragma once
 
