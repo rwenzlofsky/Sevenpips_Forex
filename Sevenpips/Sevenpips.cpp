@@ -96,26 +96,26 @@ CString cleanString(CString s)
 }
 
 
-MT4_EXPFUNC char * __stdcall Sevenpips_Test(char *s)
+MT4_EXPFUNC char * __stdcall Sevenpips_Test(char& s)
 {
-	AfxMessageBox((CString) "Installed");
+	AfxMessageBox(static_cast<CString>(s));
 	return "test";
 }
 
-MT4_EXPFUNC char* __stdcall Upload_MT4(char *server, char *args)
+MT4_EXPFUNC char* __stdcall Upload_MT4(char& server, char& args)
 {
 
-	char buffer[255];
-	CString post, res;
-	//CString ts = cleanString(args);
-	post.Format("%s", args);
+	CString post, res, buffer;
 
+	post.Format("args=%s", args);
 
 	CFXSocket socket;
-	res = socket.UrlGet(server, post);
-
+	res = socket.UrlGet(static_cast<CString>(server), post);
+	
 	char *ret = socket.lasterror.GetBuffer(socket.lasterror.GetLength());
-	sprintf_s(buffer, "%s %s", server, ret);
-	return(&buffer[0]);
+
+	buffer.Format("%s->%s", server, ret);
+
+	return(buffer.GetBuffer(buffer.GetLength()));
 
 }
